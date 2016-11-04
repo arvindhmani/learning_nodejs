@@ -2,7 +2,7 @@ var http = require('http')
 var map = require('through2-map')
 
 var server = http.createServer(function(req, res) {
-	//console.log(req)
+	
 	if(req.method == 'POST') {
 		req.pipe(map(function(chunk) {
 			return chunk.toString().toUpperCase()
@@ -10,4 +10,4 @@ var server = http.createServer(function(req, res) {
 	}
 })
 
-	server.listen(Number(process.argv[2]))
+server.listen(Number(process.argv[2]))
